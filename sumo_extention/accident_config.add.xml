@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<additional>
+    <variableSpeedSign id="accident_vss_0" lanes="-E1_1">
+        <step time="0.00" speed="13.89" />
+        <step time="45.0" speed="0.00" />
+        <step time="75.0" speed="13.89" />
+        </variableSpeedSign>
+    <rerouter id="accident_rerouter_0" edges="-E1">
+        <interval begin="45.0" end="75.0">
+            <closingLaneReroute id="-E1_1" allow="truck" />
+            </interval>
+        </rerouter>
+    </additional>

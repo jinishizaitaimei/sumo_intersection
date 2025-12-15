@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='utf-8'?>
+<routes>
+    <vType id="car" accel="2.5" decel="4.5" sigma="0.5" length="4" maxSpeed="33.33" color="255,255,0" />
+    <vType id="emergency" accel="5.0" decel="8.0" sigma="0.0" length="5" maxSpeed="50.0" color="255,0,0" vClass="emergency" guiShape="emergency" lcStrategic="2.0" lcCooperative="1.0" lcSpeedGain="3.0" minGap="1.0" has.bluelight.device="true" />
+    <vType id="accident" accel="2.5" decel="4.5" sigma="0.0" length="4" maxSpeed="33.33" color="255,128,0" vClass="truck" guiShape="truck" minGap="0.0" emergencyDecel="9.0" />
+    <route id="ntos" edges="-E3 E1" />
+    <route id="ntow" edges="-E3 E2" />
+    <route id="ntoe" edges="-E3 E0" />
+    <route id="ston" edges="-E1 E3" />
+    <route id="stow" edges="-E1 E2" />
+    <route id="stoe" edges="-E1 E0" />
+    <route id="wtoe" edges="-E2 E0" />
+    <route id="wton" edges="-E2 E3" />
+    <route id="etow" edges="-E0 E2" />
+    <route id="eton" edges="-E0 E3" />
+    <route id="etos" edges="-E0 E1" />
+    <vehicle id="0" type="car" route="stoe" depart="0.44" color="21,129,215" />
+    <vehicle id="1" type="car" route="stow" depart="0.93" color="115,21,113" />
+    <vehicle id="2" type="car" route="ntoe" depart="2.09" color="98,45,154" />
+    <vehicle id="3" type="car" route="wtoe" depart="3.22" color="103,51,247" />
+    <vehicle id="4" type="car" route="ston" depart="4.23" color="21,220,128" />
+    <vehicle id="5" type="car" route="ston" depart="5.59" color="48,101,137" />
+    <vehicle id="6" type="car" route="ntow" depart="6.16" color="53,249,50" />
+    <vehicle id="7" type="car" route="etos" depart="7.0" color="188,123,173" />
+    <vehicle id="8" type="car" route="ntos" depart="7.94" color="53,34,7" />
+    <vehicle id="9" type="car" route="wtoe" depart="8.95" color="190,109,225" />
+    <vehicle id="10" type="car" route="ntow" depart="10.09" color="43,108,221" />
+    <vehicle id="11" type="car" route="ntoe" depart="11.03" color="20,110,20" />
+    <vehicle id="12" type="car" route="ntow" depart="12.51" color="98,234,117" />
+    <vehicle id="13" type="car" route="ntos" depart="13.49" color="185,126,139" />
+    <vehicle id="14" type="car" route="ntos" depart="14.65" color="195,114,135" />
+    <vehicle id="15" type="car" route="eton" depart="16.07" color="74,109,175" />
+    <vehicle id="16" type="car" route="wton" depart="17.25" color="157,73,164" />
+    <vehicle id="17" type="car" route="ston" depart="18.45" color="177,246,57" />
+    <vehicle id="18" type="car" route="stoe" depart="19.44" color="56,11,21" />
+    <vehicle id="19" type="car" route="etos" depart="20.21" color="30,174,112" />
+    <vehicle id="20" type="car" route="stoe" depart="21.14" color="19,205,114" />
+    <vehicle id="21" type="car" route="stoe" depart="22.26" color="137,20,251" />
+    <vehicle id="22" type="car" route="etow" depart="23.28" color="181,80,192" />
+    <vehicle id="23" type="car" route="ntow" depart="24.57" color="183,208,116" />
+    <vehicle id="24" type="car" route="stow" depart="25.33" color="2,144,21" />
+    <vehicle id="25" type="car" route="ntoe" depart="26.14" color="180,231,171" />
+    <vehicle id="26" type="car" route="ntos" depart="27.1" color="198,253,143" />
+    <vehicle id="27" type="car" route="stoe" depart="27.81" color="3,1,92" />
+    <vehicle id="28" type="car" route="wtoe" depart="28.57" color="35,47,56" />
+    <vehicle id="29" type="car" route="etow" depart="29.73" color="143,0,94" />
+    <vehicle id="30" type="emergency" route="ntos" depart="30.0" color="255,0,0" />
+    <vehicle id="31" type="car" route="stoe" depart="30.34" color="187,50,74" />
+    <vehicle id="32" type="car" route="stoe" depart="31.23" color="87,167,219" />
+    <vehicle id="33" type="car" route="ntoe" depart="32.59" color="144,34,44" />
+    <vehicle id="34" type="car" route="wton" depart="33.53" color="107,240,26" />
+    <vehicle id="35" type="car" route="ston" depart="34.14" color="38,15,196" />
+    <vehicle id="36" type="car" route="ntos" depart="34.96" color="196,241,142" />
+    <vehicle id="37" type="car" route="ntow" depart="36.08" color="46,14,1" />
+    <vehicle id="38" type="car" route="ntow" depart="37.0" color="181,177,242" />
+    <vehicle id="39" type="car" route="ston" depart="37.72" color="30,161,181" />
+    <vehicle id="40" type="car" route="ntos" depart="38.84" color="105,159,63" />
+    <vehicle id="41" type="car" route="ntos" depart="39.55" color="158,170,146" />
+    <vehicle id="42" type="accident" route="ston" depart="40.0" color="255,128,0">
+        <stop lane="-E1_1" pos="50" startPos="45" endPos="55" duration="30.0" until="75.0" triggered="false" parking="false" />
+        </vehicle>
+    <vehicle id="43" type="car" route="stoe" depart="40.91" color="47,159,105" />
+    <vehicle id="44" type="car" route="ntos" depart="41.99" color="36,169,235" />
+    <vehicle id="45" type="car" route="stow" depart="43.07" color="26,16,199" />
+    <vehicle id="46" type="car" route="ntoe" depart="44.14" color="50,197,186" />
+    <vehicle id="47" type="car" route="eton" depart="45.05" color="28,10,0" />
+    <vehicle id="48" type="car" route="ntos" depart="46.0" color="96,12,81" />
+    <vehicle id="49" type="car" route="stow" depart="47.59" color="176,56,82" />
+    <vehicle id="50" type="car" route="eton" depart="48.72" color="123,72,168" />
+    <vehicle id="51" type="car" route="eton" depart="49.53" color="109,178,185" />
+    <vehicle id="52" type="car" route="wtoe" depart="50.4" color="110,78,242" />
+    <vehicle id="53" type="car" route="ston" depart="51.58" color="64,196,161" />
+    <vehicle id="54" type="car" route="ston" depart="52.67" color="134,75,50" />
+    <vehicle id="55" type="car" route="stow" depart="53.76" color="54,158,29" />
+    <vehicle id="56" type="car" route="wton" depart="54.81" color="31,135,1" />
+    <vehicle id="57" type="car" route="ntoe" depart="56.08" color="132,113,121" />
+    <vehicle id="58" type="car" route="etow" depart="57.04" color="112,188,116" />
+    <vehicle id="59" type="car" route="stoe" depart="57.8" color="99,94,104" />
+    <vehicle id="60" type="car" route="ntoe" depart="58.75" color="127,14,206" />
+    <vehicle id="61" type="car" route="stoe" depart="59.44" color="71,113,90" />
+    <vehicle id="62" type="emergency" route="ston" depart="60.0" color="255,0,0" />
+    <vehicle id="63" type="car" route="wtoe" depart="60.88" color="195,91,90" />
+    <vehicle id="64" type="car" route="ntoe" depart="61.89" color="157,92,250" />
+    <vehicle id="65" type="car" route="eton" depart="63.09" color="12,85,106" />
+    <vehicle id="66" type="car" route="stow" depart="64.22" color="6,77,205" />
+    <vehicle id="67" type="car" route="etos" depart="65.14" color="173,75,192" />
+    <vehicle id="68" type="car" route="etos" depart="66.09" color="45,118,197" />
+    <vehicle id="69" type="car" route="eton" depart="67.16" color="62,220,105" />
+    <vehicle id="70" type="car" route="stoe" depart="68.43" color="31,101,134" />
+    <vehicle id="71" type="car" route="ntos" depart="69.25" color="78,40,114" />
+    <vehicle id="72" type="car" route="ston" depart="70.43" color="40,64,199" />
+    <vehicle id="73" type="car" route="stow" depart="71.63" color="53,191,35" />
+    <vehicle id="74" type="car" route="ntos" depart="73.04" color="94,197,27" />
+    <vehicle id="75" type="car" route="ntow" depart="73.84" color="69,37,137" />
+    <vehicle id="76" type="car" route="stoe" depart="74.48" color="82,140,184" />
+    <vehicle id="77" type="car" route="ston" depart="75.34" color="46,105,117" />
+    <vehicle id="78" type="car" route="stow" depart="76.47" color="14,32,70" />
+    <vehicle id="79" type="car" route="stow" depart="77.59" color="56,87,228" />
+    <vehicle id="80" type="car" route="etow" depart="78.62" color="179,205,242" />
+    <vehicle id="81" type="car" route="wton" depart="80.12" color="96,51,138" />
+    <vehicle id="82" type="car" route="ntoe" depart="80.76" color="92,152,66" />
+    <vehicle id="83" type="car" route="ston" depart="81.75" color="197,198,176" />
+    <vehicle id="84" type="car" route="etow" depart="82.58" color="10,147,85" />
+    <vehicle id="85" type="car" route="ntoe" depart="83.73" color="138,174,167" />
+    <vehicle id="86" type="car" route="ntos" depart="84.7" color="104,179,87" />
+    <vehicle id="87" type="car" route="etos" depart="85.57" color="176,20,50" />
+    <vehicle id="88" type="car" route="wton" depart="86.47" color="80,223,119" />
+    <vehicle id="89" type="car" route="stow" depart="87.11" color="168,113,21" />
+    <vehicle id="90" type="car" route="etos" depart="88.12" color="164,24,76" />
+    <vehicle id="91" type="car" route="ntow" depart="89.08" color="37,49,146" />
+    <vehicle id="92" type="car" route="ntoe" depart="89.85" color="182,145,162" />
+    <vehicle id="93" type="emergency" route="wtoe" depart="90.0" color="255,0,0" />
+    <vehicle id="94" type="car" route="ntoe" depart="91.21" color="55,157,103" />
+    <vehicle id="95" type="car" route="ntoe" depart="92.49" color="45,138,56" />
+    <vehicle id="96" type="car" route="stow" depart="93.38" color="16,138,126" />
+    <vehicle id="97" type="car" route="ntow" depart="94.59" color="128,0,194" />
+    <vehicle id="98" type="car" route="stoe" depart="95.57" color="145,179,186" />
+    <vehicle id="99" type="car" route="ntoe" depart="95.98" color="55,134,75" />
+    <vehicle id="100" type="car" route="ntoe" depart="97.04" color="21,219,205" />
+    <vehicle id="101" type="car" route="wton" depart="98.29" color="132,114,49" />
+    <vehicle id="102" type="car" route="stow" depart="99.13" color="17,207,251" />
+    <vehicle id="103" type="car" route="etos" depart="99.93" color="31,28,165" />
+    </routes>
