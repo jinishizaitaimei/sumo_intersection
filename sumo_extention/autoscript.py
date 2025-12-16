@@ -1,13 +1,16 @@
 """
+Version 1 - 2025.12.15 
+Powered by SWJTU WAVES LAB 西南交通大学WAVES课题组
+
 当前版本能够实现：
     1. 雨天、雪天、雾霾天
     2. 事故车设置：设置事故车的停止时间、事故车辆的数量等。车辆会绕行与重新路由
     3. 紧急车辆的设置，其能够产生更加积极的变道
-    4. 车道禁用，事故车所在的车道可以设置为车道禁用。当然你也可以不用将事故车辆的车道作为禁用车道，自行设置那个车道是禁用车道
+    4. 车道禁用
     5. 车辆在每个车道出现的具体数量
 当前版本未能实现：
     1. 用户自行设计随机种子和.net的信号灯配时
-    2. 公交车与公交专用车道未能实现，原因:天府三街不存在公交专用车道，同时公交车运行线路与间隔时间也未知
+    2. 公交车与公交专用车道暂未实现
     3. 车道管制未实现，即目前是整个车道禁用，而不是一小段路线禁用
     4. 紧急车辆未设置闯红灯权限
 一些说明见下文todo和注释
@@ -15,16 +18,16 @@
 
 """
 Current Version Features:
-    1. Rainy, snowy and foggy weather conditions
-    2. Accident vehicle configuration: Set the stopping duration and the number of accident vehicles, etc. Affected vehicles will detour and reroute automatically
-    3. Emergency vehicle configuration: Emergency vehicles are capable of more proactive lane changes
-    4. Lane closure: The lane where accident vehicles are located can be set as a closed lane. Alternatively, you can designate any lane as closed regardless of accident vehicle positions
-    5. Customizable vehicle volume in each individual lane
+    1. Rainy, snowy, and foggy weather conditions.
+    2. Accident vehicle configuration: Set the stopping duration and the number of accident vehicles, etc. Affected vehicles will detour and reroute automatically.
+    3. Emergency vehicle configuration: Emergency vehicles are capable of more proactive lane changes.
+    4. Lane closure: The lane where accident vehicles are located is set as a closed lane. Alternatively, you can designate any lane as closed regardless of accident vehicle positions.
+    5. Customizable vehicle volume in each individual lane.
 Current Version Limitations:
-    1. Cannot support user-defined random seeds and .NET-based traffic signal timing
-    2. Bus and bus-only lane functionality not implemented. Reason: There are no bus-only lanes on Tianfu 3rd Street, and neither bus routes nor operation intervals are available
-    4. Partial lane closure not supported: The current version only allows full closure of an entire lane instead of closing a specific segment
-    5. Emergency vehicles are not granted the right to run red lights
+    1. Cannot support user-defined random seeds and .NET-based traffic signal timing.
+    2. Bus and bus-only lane functionality not implemented. 
+    4. Partial lane closure not supported: The current version only allows full closure of an entire lane instead of closing a specific segment.
+    5. Emergency vehicles are not granted the right to run red lights.
 For additional details, refer to the todo notes and code comments below.
 """
 import xml.etree.ElementTree as ET
@@ -79,7 +82,7 @@ def main():
     # 创建XML根元素
     # Create the root element of the XML file.
     root = ET.Element("routes")
-    #todo 环境分为雨天。雪天、雾霾天。在这里可以通过修改accel、decel、maxSpeed、minGap等参数来达到不同的环境，这里的修改都是相对的。（这几个目前默认，未添加"minGap": "1.5",  # 激进驾驶员，车辆间距更小 "tau": "0.8", # 反应更快 "sigma": "0.8" # 更激进, 此外跟车模型和变道模型也可设置）
+    #todo 环境分为雨天。雪天、雾霾天。在这里可以通过修改accel、decel、maxSpeed、minGap等参数来达到不同的环境。（这几个目前默认，未添加"minGap": "1.5",  # 激进驾驶员，车辆间距更小 "tau": "0.8", # 反应更快 "sigma": "0.8" # 更激进, 此外跟车模型和变道模型也可设置）
     #todo The environment is classified into rainy, snowy, and foggy weather. Different environmental effects can be achieved here by modifying parameters such as accel, decel, maxSpeed, minGap, etc.
     # All modifications here are relative. (These parameters are currently set to default values; the following have not been added yet:"minGap": "1.5", # Aggressive drivers with smaller vehicle gaps"tau": "0.8", # Faster reaction time"sigma": "0.8" # More aggressive driving behaviorIn addition, the car-following model and lane-changing model can also be configured.)
     #https://sumo.dlr.de/docs/Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes.html#abstract_vehicle_class
@@ -364,7 +367,7 @@ def main():
             depart_time += 0.2  # 稍微推迟普通车辆，避免与事故车辆时间冲突 Delay regular vehicles slightly to avoid time conflicts with accident vehicles
 
         # 创建车辆元素
-        # creat vehicle element
+        # Create vehicle element
         vehicle = ET.SubElement(root, "vehicle", attrib={
             "id": str(vehicle_id),
             "type": chosen_type,
@@ -627,4 +630,5 @@ def create_additional_file(accident_vehicles, route_edges):
 
 
 if __name__ == "__main__":
+
     main()
