@@ -1,1 +1,4 @@
-# 利用sumo简单制作一个天府三街交叉口，以及车辆生成的简单脚本
+# Signal Control Simulator_v1 @SWJTU WAVES LAB
+
+An intersection located in the High-tech Zone, Chengdu, China, was simulated for testing RL/non-RL models of signal control.
+Multiple scenarios, including adverse weather, lane drop/close, priority passing of emergency vehicles, etcs, were added.
